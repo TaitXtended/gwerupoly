@@ -9,8 +9,9 @@ use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\TestController;
 
-
-Route::get('/', [PagesController::class,'index']);
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/mission', [PagesController::class,'mission']);
 Route::get('/history', [PagesController::class,'history']);
 Route::get('/about', [PagesController::class,'about']);
