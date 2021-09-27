@@ -26,7 +26,7 @@ class CoursesController extends Controller
     public function create()
 
     {
-        $departments=Department::all();
+        $departments=Department::all()->pluck('department');
         if(count($departments)>0){
         return view('admin.courses.create')->with('departments',$departments);
         }else{
@@ -42,10 +42,11 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
+        $departments=Department::all()->pluck('department'); 
         $course= new Course();
         $course->coursecode=$request->input('coursecode');
         $course->coursename=$request->input('coursename');
-        $course->department=$request->input('department');
+        $course->department=$departments[$request->input('department')];
         $course->save();
         return redirect('/courses');
     }

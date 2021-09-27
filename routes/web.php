@@ -7,6 +7,7 @@ use App\Http\Controllers\NoticesController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\TestController;
 
 
 Route::get('/', [PagesController::class,'index']);
@@ -24,11 +25,16 @@ Route::get('/students/{id}/edit',[StudentsController::class,'edit']);
 Route::get('/students/{id}/delete',[StudentsController::class,'destroy']);
 
 Route::resource('/departments','App\Http\Controllers\DepartmentsController');
+Route::get('/departments/{id}/delete',[DepartmentsController::class,'destroy']);
 
 Route::resource('/courses','App\Http\Controllers\CoursesController');
 Route::get('/courses/{id}/delete',[CoursesController::class,'destroy']);
 
 Route::resource('/levels','App\Http\Controllers\LevelsController');
+
+Route::resource('/portal','App\Http\Controllers\PortalsController');
+
+Route::get('/role',[TestController::class,'index']);
 
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');

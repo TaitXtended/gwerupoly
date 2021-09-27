@@ -1,12 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="breadcumb-area bg-img mb-5" style="background-image: url(/storage/img/breadcumb.jpg);">
-        <div class="bradcumbContent">
-            <h2>Student Profile Update</h2>
-        </div>
-    </div>
+
     <div class="row justify-content-center mt-5 ">
         <div class="col-md-8">
             <div class="card">
@@ -15,7 +10,7 @@
                      
                     {!! Form::open(['action'=>['App\Http\Controllers\DepartmentsController@update',$department->id], 'method'=>'POST','enctype'=>'multipart/form-data'])!!}
 
-                          < <div class="form-group row">
+                           <div class="form-group row">
                               {{Form::label('hod','Head Of Department:',['class'=>'col-md-4 col-form-label text-md-right'])}}
                                    
                               <div class="col-md-6 ">

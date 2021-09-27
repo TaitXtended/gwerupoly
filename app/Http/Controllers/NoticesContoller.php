@@ -25,7 +25,7 @@ class NoticesContoller extends Controller
     public function index()
     {
         $notices =Notice::orderBy('created_at','desc')->get();
-        return view('home')->with('notices',$notices);
+        return view('notices.index')->with('notices',$notices);
         
     }
    
@@ -55,7 +55,7 @@ class NoticesContoller extends Controller
         $notice->notice=$request->input('notice');
         
         $notice->save();
-        return redirect('/home');
+        return redirect('/notices');
     }
 
     /**

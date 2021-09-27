@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Notice;
-
+use App\Models\Student;
 class HomeController extends Controller
 {
     /**
@@ -25,7 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $notices =Notice::orderBy('created_at','desc')->get();
-        return view('home')->with('notices',$notices);
+        $students=Student::all();
+        return view('home')->with(['notices'=>$notices,'students'=>$students]);
         
     }
 }

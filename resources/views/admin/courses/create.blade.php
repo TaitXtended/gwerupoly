@@ -34,7 +34,7 @@
                               {{Form::label('department','Department Name:',['class'=>'col-md-4 col-form-label text-md-right'])}}
                              
                               <div class="col-md-6 ">
-                                   {{Form::text('department', '', ['class'=>'form-control','placeholder'=>'Department Name','required'])}}
+                                   {{Form::select('department', $departments,null, ['class'=>'form-control','required'])}}
                               </div>
                          </div>
                       

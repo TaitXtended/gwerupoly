@@ -19,7 +19,7 @@
                               {{Form::label('course','Course :',['class'=>'col-md-4 col-form-label text-md-right'])}}
                                    
                               <div class="col-md-6 ">
-                                   {{Form::text('course', '', ['class'=>'form-control','placeholder'=>'Course ','required','autofocus'])}}
+                                   {{Form::select('course', $courses,null, ['class'=>'form-control','placeholder'=>' ','required','autofocus'])}}
                               </div>
                          </div>
 

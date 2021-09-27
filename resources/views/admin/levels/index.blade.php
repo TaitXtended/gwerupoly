@@ -21,7 +21,7 @@
                             <th>Qualifications </th>
                             <th>Modules </th>
                             <th>
-                                <a href="/courses/create" class="btn btn-success">Add Level</a>
+                                <a href="/levels/create" class="btn btn-success">Add Level</a>
                             </th><th></th>
                         </tr>
                         @foreach ($levels as $level)

@@ -52,7 +52,7 @@ class StudentsController extends Controller
             $filename=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
             $extension=$request->file('pic')->getClientOriginalExtension();
             $fileNameToStore=$filename.'_'.time().'.'.$extension;
-            $path=$request->file('pic')->storeAs('public/stdentprofilephotos',$fileNameToStore);
+            $path=$request->file('pic')->storeAs('public/studentprofile',$fileNameToStore);
         }else{
             $fileNameToStore='noimage.jpeg';
         }
@@ -65,6 +65,7 @@ class StudentsController extends Controller
         $student->level=$request->input('level');
         $student->studymode=$request->input('smode');
         $student->pass=$request->input('pass');
+         $student->role="student";
         $student->profilephoto=$fileNameToStore;
         $student->save();
         return redirect('/students');
@@ -114,7 +115,7 @@ class StudentsController extends Controller
             $filename=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
             $extension=$request->file('pic')->getClientOriginalExtension();
             $fileNameToStore=$filename.'_'.time().'.'.$extension;
-            $path=$request->file('pic')->storeAs('public/stdentprofilephotos',$fileNameToStore);
+            $path=$request->file('pic')->storeAs('public/studentprofile',$fileNameToStore);
         }else{
             $fileNameToStore='noimage.jpeg';
         }

@@ -1,16 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
-<h1 class="center">POSTS</h1>
-@if (count($posts)>0)
+<h1 class="center">Notice Board</h1>
+@if (count($notices)>0)
 
-     <div class="card">
-          <ul class="list-group list-group-flush">
+     <div >
+          <ul class="list-  list- -flush">
                
-@foreach ($posts as $post)
-<li class="list-group-item">
+@foreach ($notices as $notice)
+<li class="list-group -item">
             
-          <h2><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
-          <small>Written on: {{$post->created_at}}</small>
+          <h2><a href="/notices/{{$notice->id}}">{{$notice->notice}}</a></h2>
+          <small>Written on: {{$notice->created_at}}</small>
      </li>
     
 @endforeach
@@ -18,7 +18,7 @@
           </ul>
           </div>
 @else
-    
+    <p>you have 0 notices</p>
 @endif
 
 @endsection

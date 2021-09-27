@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Level;
+use App\Models\Course;
 class LevelsController extends Controller
 {
     /**
@@ -24,7 +25,12 @@ class LevelsController extends Controller
      */
     public function create()
     {
-        return view('admin.levels.create');
+         $courses=Course::all()->pluck('coursename');
+        if(count($courses)>0){
+        return view('admin.levels.create')->with('courses',$courses);
+        }else{
+            return redirect('/courses/create');
+        }
     }
 
     /**
@@ -36,9 +42,10 @@ class LevelsController extends Controller
     public function store(Request $request)
     {
         $level=new Level();
-        $level->course=$request->input('course');
+        $courses=Course::all()->pluck('coursename');
+        $level->course=$courses[$request->input('course')];
         $level->level=$request->input('level');
-        $level->course=$request->input('course');
+        
         $level->qualifications=$request->input('qualifications');
         $level->modules=$request->input('modules');
         $level->save();

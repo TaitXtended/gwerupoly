@@ -9,9 +9,9 @@
     </div>
     <div class="row justify-content-center mt-5 ">
         <div class="col-md-8">
-            <div class="card ">
+            <div class="widget ">
                  <div class="ml-5">
-                      <img src="/storage/stdentprofilephotos/{{$student->profilephoto}}"style="height:100px;width:100px;border-radius:50%;" class="mt-5 ml-5">
+                      <img src="/storage/studentprofile/{{$student->profilephoto}}"style="height:100px;width:100px;border-radius:50%;" class="mt-5 ml-5">
                 <div class="card-body">
                     <h1>{{$student->fname.' '.$student->surname}}</h1>
                     <p>Email: {{$student->email}}</p>
