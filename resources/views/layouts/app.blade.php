@@ -10,14 +10,14 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="/js/app.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body style="background-image:linear-gradient(#593cda65, #568bee2a)">
     <div id="app">
@@ -31,7 +31,7 @@
                     <div class="col-12 h-100">
                         <div class="header-content h-100 d-flex align-items-center justify-content-between">
                             <div class="academy-logo mb-1">
-                                <a href="index.html"><img src="{{asset('storage/img/core-img/logo.png')}}" alt=""></a>
+                                <a href="index.html"><img src="/img/core-img/logo.png" alt=""></a>
                             </div>
                            
                           

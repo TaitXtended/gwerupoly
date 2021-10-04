@@ -6,7 +6,7 @@
         <div class="hero-slides owl-carousel">
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image:linear-gradient(#593cda65, #568bee2a), url(/storage/img/bg.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image:linear-gradient(#593cda65, #568bee2a), url(/img/bg.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center" style="text-align: center;">
                         <div class="col-12">
@@ -21,7 +21,7 @@
             </div>
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: linear-gradient(#593cda65, #568bee2a),url(/storage/img/stud.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: linear-gradient(#593cda65, #568bee2a),url(/img/stud.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
