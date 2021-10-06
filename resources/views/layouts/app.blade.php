@@ -31,10 +31,9 @@
                     <div class="col-12 h-100">
                         <div class="header-content h-100 d-flex align-items-center justify-content-between">
                             <div class="academy-logo mb-1">
-                                <a href="index.html"><img src="/img/core-img/logo.png" alt=""></a>
+                                <a href="/"><img src="/img/core-img/logo.png" alt=""></a>
                             </div>
                            
-                          
                         </div>
                     </div>
                 </div>

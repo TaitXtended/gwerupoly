@@ -15,7 +15,14 @@ class LevelsController extends Controller
     public function index()
     {
         $levels=Level::orderBy('course','desc')->get();
-        return view('admin.levels.index')->with('levels',$levels);
+      
+        $courses = Course::all()->pluck('coursename');
+        if (count($courses) > 0) {
+            return view('admin.levels.index')->with(['levels'=> $levels,
+            'courses'=> $courses]);
+        } else {
+            return redirect('/courses/create');
+        }
     }
 
     /**
@@ -23,15 +30,15 @@ class LevelsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-         $courses=Course::all()->pluck('coursename');
-        if(count($courses)>0){
-        return view('admin.levels.create')->with('courses',$courses);
-        }else{
-            return redirect('/courses/create');
-        }
-    }
+    // public function create()
+    // {
+    //      $courses=Course::all()->pluck('coursename');
+    //     if(count($courses)>0){
+    //     return view('admin.levels.create')->with('courses',$courses);
+    //     }else{
+    //         return redirect('/courses/create');
+    //     }
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -45,7 +52,6 @@ class LevelsController extends Controller
         $courses=Course::all()->pluck('coursename');
         $level->course=$courses[$request->input('course')];
         $level->level=$request->input('level');
-        
         $level->qualifications=$request->input('qualifications');
         $level->modules=$request->input('modules');
         $level->save();

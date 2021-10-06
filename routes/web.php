@@ -25,7 +25,7 @@ Route::get('/students/{id}',[StudentsController::class,'show']);
 Route::get('/students/{id}/edit',[StudentsController::class,'edit']);
 Route::get('/students/{id}/delete',[StudentsController::class,'destroy']);
 
-Route::resource('/departments','App\Http\Controllers\DepartmentsController');
+Route::resource('/departments','App\Http\Controllers\DepartmentsController'); 
 Route::get('/departments/{id}/delete',[DepartmentsController::class,'destroy']);
 
 Route::resource('/courses','App\Http\Controllers\CoursesController');

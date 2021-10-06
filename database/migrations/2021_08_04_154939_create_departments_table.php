@@ -17,7 +17,7 @@ class CreateDepartmentsTable extends Migration
             $table->id();
             $table->string('hod');
             $table->string('vicehod');
-            $table->string('department');
+            $table->string('department')->unique();
             $table->timestamps();
         });
     }

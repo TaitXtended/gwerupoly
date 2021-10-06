@@ -15,7 +15,18 @@ class CoursesController extends Controller
     public function index()
     {
         $courses=Course::orderBy('coursename','desc')->get();
-      return view('admin.courses.index')->with('courses',$courses);
+        $departments = Department::all()->pluck('department');
+        if (count($departments) > 0) {
+            return view('admin.courses.index')->with([
+                'courses' => $courses,
+                'departments' => $departments
+            ]);
+        } else {
+            return redirect('/departments/create');
+        }
+        
+            
+       
     }
 
     /**
@@ -23,16 +34,16 @@ class CoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    // public function create()
 
-    {
-        $departments=Department::all()->pluck('department');
-        if(count($departments)>0){
-        return view('admin.courses.create')->with('departments',$departments);
-        }else{
-            return redirect('/departments/create');
-        }
-    }
+    // {
+    //     $departments=Department::all()->pluck('department');
+    //     if(count($departments)>0){
+    //     return view('admin.courses.create')->with('departments',$departments);
+    //     }else{
+    //         return redirect('/departments/create');
+    //     }
+    // }
 
     /**
      * Store a newly created resource in storage.

@@ -221,9 +221,7 @@
                             <li>
                                 <a href="/courses">Manage Courses </a>
                             </li>
-                            <li>
-                                <a href="/courses/create"> Add Course </a>
-                            </li>
+                           
                             
                             
                         </ul>

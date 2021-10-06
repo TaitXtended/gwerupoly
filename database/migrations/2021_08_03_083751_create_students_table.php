@@ -17,12 +17,13 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('fname');
             $table->string('surname');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('regnum');
             $table->string('coursename');
             $table->string('level');
             $table->string('studymode');
             $table->string('pass');
+            $table->string('profilephoto');
             $table->timestamps();
         });
     }
