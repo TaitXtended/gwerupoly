@@ -197,11 +197,9 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="levels" data-parent="#accordionExample">
                             <li>
-                                <a href="/departments">Manage Departments </a>
+                                <a href="/levels">Levels </a>
                             </li>
-                            <li>
-                                <a href="/departments/create"> Add Departments </a>
-                            </li>
+                            
                             
                             
                         </ul>

@@ -6,7 +6,7 @@
                 <div class="row layout-spacing layout-top-spacing" id="cancel-row">
                     <div class="col-lg-12">
                         <div class="widget-content searchable-container list">
-                             <h1>levels</h1>
+                             <h1>Course Levels</h1>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-5 col-md-5 col-sm-7 filtered-list-search layout-spacing align-self-center">
                                     <form class="form-inline my-2 my-lg-0">
@@ -43,14 +43,14 @@
                                                                     <div class="col-md-6">
                                                                         <div class="contact-name">
                                                                             <i class="flaticon-user-11"></i>
-                                                                             {{Form::text('levelcode', '', ['class'=>'form-control','placeholder'=>'level Code','required','autofocus'])}}
+                                                                             {{Form::text('level', '', ['class'=>'form-control','placeholder'=>'Level ','required','autofocus'])}}
                                                                          <span class="validation-text"></span>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="contact-email">
                                                                             <i class="flaticon-mail-26"></i>
-                                                                            {{Form::select('department', $courses,null, ['class'=>'form-control','required'])}}
+                                                                            {{Form::select('course', $courses,null, ['class'=>'form-control','style'=>'padding:5px;','required'])}}
                                                                           <span class="validation-text"></span>
                                                                         </div>
                                                                     </div>
@@ -61,7 +61,15 @@
                                                                     <div class="col-md-12">
                                                                         <div class="contact-location">
                                                                             <i class="flaticon-location-1"></i>
-                                                                             {{Form::text('levelname', '', ['class'=>'form-control','placeholder'=>'level Name','required'])}}
+                                                                             {{Form::text('qualifications', '', ['class'=>'form-control','placeholder'=>'Minimum Qualifications','required'])}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="contact-location">
+                                                                            <i class="flaticon-location-1"></i>
+                                                                             {{Form::text('modules', '', ['class'=>'form-control','placeholder'=>'Course Modules','required'])}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -94,10 +102,10 @@
                                                   <span class="new-control-indicator"></span>
                                                 </label>
                                             </div>
-                                            <h4>level </h4>
+                                            <h4>Course </h4>
                                         </div>
                                         <div class="user-email">
-                                            <h4>level Code</h4>
+                                            <h4>Level </h4>
                                         </div>
                                         <div class="user-location">
                                             <h4 style="margin-left: 0;">Department</h4>
@@ -123,18 +131,18 @@
                                             </div>
                                             {{-- <img src="assets/img/profile-29.jpg" alt="avatar"> --}}
                                             <div class="user-meta-info ml-5">
-                                                <p class="user-name" data-name="{{$level->levelname}}">{{$level->levelname}}</p>
+                                                <p class="user-name" data-name="{{$level->course}}">{{$level->course}}</p>
                                                 {{-- <p class="user-work" data-occupation="Web Developer">Web Developer</p> --}}
                                             </div>
                                         </div>
                                         
                                         <div class="user-email">
-                                            <p class="info-title">level Code </p>
-                                            <p class="usr-email-addr" data-location="{{$level->levelcode}}">{{$level->levelcode}}</p>
+                                            <p class="info-title">Level </p>
+                                            <p class="usr-email-addr" data-location="{{$level->level}}">{{$level->level}}</p>
                                         </div>
                                         <div class="user-location">
-                                            <p class="info-title">Department </p>
-                                            <p class="usr-location" data-phone="{{$level->department}}">{{$level->department}}</p>
+                                            <p class="info-title">Qualifications </p>
+                                            <p class="usr-location" data-phone="{{$level->qualifications}}">{{$level->qualifications}}</p>
                                         </div>
                                         <div class="actionbtn">
                                             <a href="/levels/{{$level->id}}/edit" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 "><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a>

@@ -77,7 +77,15 @@ class LevelsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $level = Level::find($id);
+
+        $courses = Course::all()->pluck('coursename');
+        
+            return view('admin.levels.edit')->with([
+                'level' => $level,
+                'courses' => $courses
+            ]);
+        
     }
 
     /**
@@ -89,7 +97,15 @@ class LevelsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+        $level =Level::find($id);
+        $courses = Course::all()->pluck('coursename');
+        $level->course = $courses[$request->input('course')];
+        $level->level = $request->input('level');
+        $level->qualifications = $request->input('qualifications');
+        $level->modules = $request->input('modules');
+        $level->update();
+        return redirect('/levels');
     }
 
     /**
@@ -100,6 +116,8 @@ class LevelsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $level=Level::find($id);
+        $level->delete();
+        return redirect('/levels');
     }
 }

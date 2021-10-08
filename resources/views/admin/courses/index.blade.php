@@ -50,7 +50,7 @@
                                                                     <div class="col-md-6">
                                                                         <div class="contact-email">
                                                                             <i class="flaticon-mail-26"></i>
-                                                                            {{Form::select('department', $departments,null, ['class'=>'form-control','required'])}}
+                                                                            {{Form::select('department', $departments,null, ['class'=>'form-control','style'=>'padding:5px;','required'])}}
                                                                           <span class="validation-text"></span>
                                                                         </div>
                                                                     </div>

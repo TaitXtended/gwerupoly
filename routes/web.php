@@ -8,6 +8,7 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\LevelsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +33,8 @@ Route::resource('/courses','App\Http\Controllers\CoursesController');
 Route::get('/courses/{id}/delete',[CoursesController::class,'destroy']);
 
 Route::resource('/levels','App\Http\Controllers\LevelsController');
+Route::get('/levels/{id}/delete', [LevelsController::class, 'destroy']);
+
 
 Route::resource('/portal','App\Http\Controllers\PortalsController');
 
